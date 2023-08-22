@@ -16,7 +16,7 @@ program
   .option("--bullmq-prefix [prefix...]", "BullMQ prefix", [])
   .option("--bull-prefix [prefix...]", "Bull prefix", [])
   .option("--redis-host <host>", "Redis host", "localhost")
-  .option("--redis-port <host>", "Redis port", 6379)
+  .option("--redis-port <port>", "Redis port", 6379)
   .option("--redis-password <password>", "Redis password")
   .action((options) => {
     const app = express();
@@ -25,8 +25,8 @@ program
 
     const redis = new Redis({
       host: options.redisHost,
-      port: options.redistPort,
-      password: options.redistPassword,
+      port: Number.parseInt(options.redisPort),
+      password: options.redisPassword,
       commandTimeout: 1000,
       enableReadyCheck: false,
       maxRetriesPerRequest: null,
