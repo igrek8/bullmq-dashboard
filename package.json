@@ -4,7 +4,7 @@
   "module": "module",
   "license": "MIT",
   "dependencies": {
-    "@bull-board/api": "5.8.0",
+    "@bull-board/api": "5.10.0",
     "@bull-board/express": "5.8.0",
     "bull": "4.11.3",
     "bullmq": "4.8.0",
